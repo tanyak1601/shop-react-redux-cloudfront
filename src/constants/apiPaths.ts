@@ -1,4 +1,10 @@
-const API_BASE = "http://localhost:4000";
+const hostname = window.location.hostname;
+const port = window.location.port;
+const protocol = window.location.protocol;
+
+const API_BASE = port
+  ? `${protocol}//${hostname}:${port}/api`
+  : `${protocol}//${hostname}/api`;
 
 const API_PATHS = {
   product: API_BASE,
